@@ -8,10 +8,11 @@ let button
 let isClear = false
 points = []
 function setup() {
-    createCanvas(720, 720); 
+    createCanvas(displayHeight, displayWidth); 
     noFill()
     button = createButton('clip point', 'true')
     button.position(10,10)
+ 
     button.mousePressed(setClear)
 }
 function setClear()
