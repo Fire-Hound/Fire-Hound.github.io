@@ -12,7 +12,7 @@ function setup() {
     noFill()
     button = createButton('clip point', 'true')
     button.position(10,10)
-    rect(rectX,rectY,rectHeight,rectWidth)
+   
 
     button.mousePressed(setClear)
 }
