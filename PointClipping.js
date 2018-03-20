@@ -15,6 +15,7 @@ function setup() {
     
     
     button.mousePressed(setClear)
+    button.touchStarted(setClear)
 }
 function setClear()
 {
