@@ -5,7 +5,7 @@ let rectY = 100
 let rectTopLeft = {x:rectX, y:rectY}
 let rectBottomRight = {x:rectX + rectWidth, y:rectY + rectHeight}
 let button
-let isClear = false
+let released
 points = []
 function setup() {
     createCanvas(displayHeight, displayWidth); 
@@ -15,11 +15,19 @@ function setup() {
     
     
     button.mousePressed(setClear)
-    button.touchStarted(setClear)
+    button.mouseReleased(hack_function)
+}
+
+//This function is a get around for mobile devices
+function hack_function()
+{
+    released = true
+    return false
 }
 function setClear()
 {
-    isClear = !isClear
+    if(!released) return
+    
     for(p of points)
     {
         if(p['x'] > rectBottomRight['x'] || p['x'] < rectTopLeft['x'] 
@@ -28,7 +36,7 @@ function setClear()
         //console.log(p['x'], p['y'])
 
     } 
-    redraw()
+    released = false
 }
 function draw() {
     strokeWeight(3)
