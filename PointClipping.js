@@ -12,8 +12,8 @@ function setup() {
     noFill()
     button = createButton('clip point', 'true')
     button.position(10,10)
-   
-
+    
+    
     button.mousePressed(setClear)
 }
 function setClear()
@@ -27,7 +27,7 @@ function setClear()
         //console.log(p['x'], p['y'])
 
     } 
-
+    redraw()
 }
 function draw() {
     strokeWeight(3)
