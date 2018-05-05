@@ -4,7 +4,7 @@ let img,player,monsters,bullets, monsterBullets, monsterImage,score,playerDead;
 //MAIN WINDOW SETUP
 function setup()
 {
-    createCanvas(640, 480);
+    createCanvas(window.innerWidth, window.innerHeight);
     score = 0;
     player = new Player(320,400);
     playerDead=false;
