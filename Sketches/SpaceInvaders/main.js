@@ -53,7 +53,8 @@ function draw()
         noLoop();
         image(gameOverImage,0,0,width,height);
         fill(203, 63, 12);//#cb4015
-        text("SCORE: "+score,width/2,height/1.2);
+        scoreText = "SCORE: "+score;
+        text(scoreText,width/2-textSize(scoreText),height/1.2);
     }
     if(monsters.length==0)
     {        
