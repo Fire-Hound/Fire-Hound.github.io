@@ -5,6 +5,7 @@ let  forceX=-2, forceY=0;
 function setup()
 {
     createCanvas(window.innerWidth, window.innerHeight);
+    buttonsIfMobile();
     score = 0;
     player = new Player(width/2,height/1.2);
     playerDead=false;
@@ -207,7 +208,14 @@ function setForces()
         forceY = 0;
     }
 }
-
+function buttonsIfMobile()
+{
+    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        createButton("Left");
+        createButton("Right");
+    }
+}
 //EVENTS
 function keyPressed()
 {
