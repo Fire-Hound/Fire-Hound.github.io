@@ -14,7 +14,7 @@ function setup()
     monsterBulletImage = loadImage("Sketches\\SpaceInvaders\\Images\\monsterBullet.png");
     monsterImage = loadImage("Sketches\\SpaceInvaders\\Images\\monster1.png");
     gameOverImage = loadImage("Sketches\\SpaceInvaders\\Images\\gameOver.jpg");
-    monsters = fill_monsters(3,7);
+    monsters = fill_monsters();
     fill(255);
 }
 
@@ -173,11 +173,14 @@ class MonsterBullet{
     }
 }
 
-function fill_monsters(rows, cols)
-{   //fills the monsters in a grid of row and columns
+function fill_monsters()
+{   
+    spacing = 50;
+    rows = floor(height/(spacing*2));
+    cols = floor(width/(spacing*2));
+    //fills the monsters in a grid of row and columns
     x = width/3;
     y = 100;//where the first monster should be placed
-    spacing = 50;
     m = []
     for(row=0; row<rows; row++)
         for(col=0; col<cols; col++)
