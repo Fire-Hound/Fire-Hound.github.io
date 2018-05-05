@@ -6,7 +6,7 @@ function setup()
 {
     createCanvas(window.innerWidth, window.innerHeight);
     score = 0;
-    player = new Player(320,400);
+    player = new Player(width/2,height/4);
     playerDead=false;
     bullets = [];
     monsterBullets = [];
