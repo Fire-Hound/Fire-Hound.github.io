@@ -51,7 +51,7 @@ function draw()
     if(playerDead) 
     {
         noLoop();
-        image(gameOverImage,0,0,height,width);
+        image(gameOverImage,0,0,width,height);
         fill(203, 63, 12);//#cb4015
         text("SCORE: "+score,270,290);
     }
