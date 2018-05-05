@@ -214,10 +214,10 @@ function buttonsIfMobile()
     if (isMobile) {
         Lbutton = createButton("Left");
         Lbutton.position(0,height/1.2);
-        Lbutton.mousePressed(()=>{player.setForce(-width/100)});
+        Lbutton.mousePressed(()=>{player.setForce(-1)});
         Rbutton = createButton("Right");
         Rbutton.position(width/1.2,height/1.2);
-        Rbutton.mousePressed(()=>{player.setForce(width/100)});
+        Rbutton.mousePressed(()=>{player.setForce(1)});
     }
 }
 //EVENTS
