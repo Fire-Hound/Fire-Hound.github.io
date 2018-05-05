@@ -212,8 +212,12 @@ function buttonsIfMobile()
 {
     let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        createButton("Left");
-        createButton("Right");
+        Lbutton = createButton("Left");
+        Lbutton.position(0,height/1.2);
+        Lbutton.mousePressed(()=>{});
+        Rbutton = createButton("Right");
+        Rbutton.position(width/1.2,height/1.2);
+        Rbutton.mousePressed(()=>{});
     }
 }
 //EVENTS
