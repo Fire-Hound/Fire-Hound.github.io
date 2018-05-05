@@ -6,7 +6,7 @@ function setup()
 {
     createCanvas(window.innerWidth, window.innerHeight);
     score = 0;
-    player = new Player(320,400);
+    player = new Player(width/2,height/1.2);
     playerDead=false;
     bullets = [];
     monsterBullets = [];
@@ -180,7 +180,7 @@ function fill_monsters()
     cols = floor(width/(spacing*2));
     //fills the monsters in a grid of row and columns
     x = width/3;
-    y = 100;//where the first monster should be placed
+    y = height/8;//where the first monster should be placed
     m = []
     for(row=0; row<rows; row++)
         for(col=0; col<cols; col++)
