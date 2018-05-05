@@ -215,10 +215,10 @@ function buttonsIfMobile()
         frameRate(20);
         Lbutton = createButton("Left");
         Lbutton.position(0,height/1.2);
-        Lbutton.mousePressed(()=>{player.setForce(-2)});
+        Lbutton.mousePressed(()=>{player.setForce(-4)});
         Rbutton = createButton("Right");
         Rbutton.position(width/1.2,height/1.2);
-        Rbutton.mousePressed(()=>{player.setForce(2)});
+        Rbutton.mousePressed(()=>{player.setForce(4)});
     }
 }
 //EVENTS
