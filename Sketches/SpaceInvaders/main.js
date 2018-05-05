@@ -212,7 +212,7 @@ function buttonsIfMobile()
 {
     let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        frameRate(20);
+        frameRate(30);
         Lbutton = createButton("Left");
         Lbutton.position(0,height/1.2);
         Lbutton.mousePressed(()=>{player.setForce(-4)});
