@@ -70,14 +70,25 @@ class Player{
     constructor(x,y){
         this.x = x;
         this.y = y;
-        this.rightX = x + 31;
+        this.width = 60;//player width
+        this.rightX = x + this.width;
         this.bottomY = y + 17;
         this.force = 0;
         this.img = loadImage("Sketches\\SpaceInvaders\\Images\\player.png");
     }
     draw(){
-        this.x += this.force;
-        this.rightX += this.force;
+        if(this.x>0&&this.rightX<width)//boundary check
+        {
+            this.x += this.force;
+            this.rightX = this.x + this.width;
+        }
+        else{
+            if(this.x<0)
+            this.x = 1;
+            else this.x = width-this.width-1;
+            this.rightX = this.x + this.width;
+            this.force = 0;
+        }
         image(this.img,this.x,this.y)
     }
     setForce(f){
