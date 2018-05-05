@@ -1,5 +1,5 @@
-let img,player,monsters,bullets, monsterBullets, monsterImage,score,playerDead;
-
+let img,player,monsters,bullets, monsterBullets, monsterImage,score,playerDead,monsterHerd;
+let  forceX=-2, forceY=0;
 
 //MAIN WINDOW SETUP
 function setup()
@@ -25,13 +25,15 @@ function draw()
     background(0);
     textSize(16);
     text("SCORE: "+score,10,20);
+    setForces();//Set global forces of monsters
     for(i=0; i<monsters.length; i++)   //Loop for collision detection and monster drawing
     {
         monsters[i].draw();
-        monsters[i].collision(bullets);
         monsters[i].attack();
+        monsters[i].move(forceX,forceY);
+        monsters[i].collision(bullets);
     }
-
+    
     player.draw();
     player.collision();
 
@@ -51,6 +53,12 @@ function draw()
         image(gameOverImage,0,0);
         fill(203, 63, 12);//#cb4015
         text("SCORE: "+score,270,290);
+    }
+    if(monsters.length==0)
+    {        
+        noLoop();
+        remove();
+        document.body.innerHTML = "<img src='Sketches\\SpaceInvaders\\Images\\win.gif', alt='YOU WON'>";
     }
 }
 
@@ -121,16 +129,23 @@ class Monster{
         catch(e){return false}//sometimes m is undefined
     }
     attack(){
-        if(random()<0.001) this.fireBullet()
+        if(random()<0.01) this.fireBullet()
     }
     fireBullet(){
         //hardcoded 13 for the bullet to start at the bottom center of the monster
         append(monsterBullets,new MonsterBullet(this.x+13,this.bottomY));
     }
+    move(fx,fy)
+    {
+        this.x += fx;
+        this.y += fy;
+        this.rightX += fx;
+        this.bottomY += fy;
+    }
 }
 class Bullet{
     constructor(){
-        this.x = player.x + 10;//10 is to draw the bullet from center of the player
+        this.x = player.x + 19;//10 is to draw the bullet from center of the player
         this.y = player.y;
         this.tip = this.x+3;
         this.force = 3;
@@ -157,9 +172,10 @@ class MonsterBullet{
         image(this.img,this.x,this.y)
     }
 }
+
 function fill_monsters(rows, cols)
 {   //fills the monsters in a grid of row and columns
-    x = 170;
+    x = width/3;
     y = 100;//where the first monster should be placed
     spacing = 50;
     m = []
@@ -169,6 +185,25 @@ function fill_monsters(rows, cols)
     return m;
 }
 
+function setForces()
+{
+    for(monster of monsters)
+    {
+        if(monster.x<0)
+        { 
+            forceX = 2;
+            forceY = 2;
+            break;
+        }
+        else if(monster.x>width)
+        { 
+            forceX = -2;
+            forceY = 2;
+            break;
+        }
+        forceY = 0;
+    }
+}
 
 //EVENTS
 function keyPressed()
