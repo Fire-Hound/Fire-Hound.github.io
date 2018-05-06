@@ -1,10 +1,11 @@
-let img,player,monsters,bullets, monsterBullets, monsterImage,score,playerDead,monsterHerd;
+let img,player,monsters,bullets, monsterBullets, monsterImage,score,playerDead,monsterHerd,windowHelp;
 let  forceX=-2, forceY=0;
 
 //MAIN WINDOW SETUP
 function setup()
 {
     createCanvas(window.innerWidth, window.innerHeight);
+    windowHelp="";
     buttonsIfMobile();
     score = 0;
     player = new Player(width/2,height/1.2);
@@ -26,6 +27,9 @@ function draw()
     background(0);
     textSize(16);
     text("SCORE: "+score,10,20);
+    //this will show for only desktop viewers.windowHelp is set in buttonsIfMobile func
+    text(windowHelp,(width/2)-(textWidth(windowHelp)/2),20);//centering th text in x direction
+
     setForces();//Set global forces of monsters
     for(i=0; i<monsters.length; i++)   //Loop for collision detection and monster drawing
     {
@@ -231,6 +235,8 @@ function buttonsIfMobile()
         Rbutton = createButton("Right");
         Rbutton.position(width/1.2,height/1.2);
         Rbutton.mousePressed(()=>{player.setForce(4)});
+    } else {
+        windowHelp = "Press 'a' to move left - 'd' to move right - left click to shoot";
     }
 }
 //EVENTS
