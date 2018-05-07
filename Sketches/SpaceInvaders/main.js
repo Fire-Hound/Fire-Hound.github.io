@@ -232,10 +232,10 @@ function buttonsIfMobile()
     if (isMobile) {
         frameRate(30);
         Lbutton = createButton("Left");
-        Lbutton.position(0,height/1.2);
+        Lbutton.position(0,height/1.1);
         Lbutton.mousePressed(()=>{player.setForce(-4)});
         Rbutton = createButton("Right");
-        Rbutton.position(width/1.2,height/1.2);
+        Rbutton.position(width/1.2,height/1.1);
         Rbutton.mousePressed(()=>{player.setForce(4)});
     } else {
         windowHelp = "Press 'a' to move left - 'd' to move right - left click to shoot";
