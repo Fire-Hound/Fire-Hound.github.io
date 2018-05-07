@@ -22,6 +22,8 @@
             left:50vw;
             transform: translate(-50%, -50%);
             color: azure;
+            animation-name: text_change;
+            animation-duration: 3s;
         }
         .caption:hover > a{
             font-size: 7.5vh;
@@ -50,6 +52,13 @@
             font-size: 3vh;
             transform: translate(-50%, -50%);
             color: azure;
+            animation-name: text_change;
+            animation-duration: 3s;
+        }
+        @keyframes text_change{
+            0% {color: crimson;};
+            50% {color: coral};
+            99% {color: azure}l
         }
     </style>
 </head>
