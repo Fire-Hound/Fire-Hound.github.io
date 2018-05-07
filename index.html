@@ -23,7 +23,7 @@
             transform: translate(-50%, -50%);
             color: azure;
             animation-name: text_change;
-            animation-duration: 3s;
+            animation-duration: 1s;
         }
         .caption:hover > a{
             font-size: 7.5vh;
@@ -36,15 +36,24 @@
             height:8vh;
             width:8vh;
             transform: translate(-50%, -50%);
+            animation-name: circ_change;
+            animation-duration: 1s;
+        }
+        .circ{
+            animation-name: circ_change;
+            animation-duration: 1s;
+        }
+        .triangle {
+            animation-name: triangle_change;
+            animation-duration: 1s;
         }
         .video-overlay-play-button:hover > .circ {
             stroke:crimson;
-            
         }
         .video-overlay-play-button:hover > .triangle {
             fill:crimson;
         }
-        .playtext{
+        .playtext > a{
             font-family: 'Titan One', cursive;
             position: absolute;
             bottom:36vh;
@@ -52,18 +61,35 @@
             font-size: 3vh;
             transform: translate(-50%, -50%);
             color: azure;
-            animation-name: text_change;
-            animation-duration: 3s;
+            animation-name: play_change;
+            animation-duration: 1s;
+        }
+        .playtext:hover > a{
+            font-size: 3.5vh;
+            color:crimson;
         }
         @keyframes text_change{
-            0% {color: crimson;};
-            50% {color: coral};
-            99% {color: azure}l
+            0% {color: crimson;bottom:49.5vh;}
+            99% {color: azure;}
+        }
+        @keyframes triangle_change{
+            0% {color: crimson;fill: crimson;}
+            99% {color: azure;}
+        }
+        @keyframes circ_change{
+            0% {color: crimson;stroke: crimson}
+            99% {color: azure;}
+        }
+        @keyframes play_change{
+            0% {color: crimson;bottom:35.5vh;}
+            99% {color: azure;}
         }
     </style>
 </head>
 <body style="margin:0;padding:0;">
     <div class="container">
+
+
         <div class="item">
             <picture>
                 <source media="(max-width: 799px)" srcset="Sketches/SpaceInvaders/Images/mobile_space_invaders.jpeg">
@@ -77,7 +103,7 @@
             <circle class="circ" cx="100" cy="100" r="90" fill="none" stroke-width="15" stroke="#f0ffff"/>
             <polygon class="triangle" points="70, 55 70, 145 145, 100" fill="#f0ffff"/>
             </svg>
-            <div class="playtext">Play</div>
+            <div class="playtext"><a href='Sketches/SpaceInvaders/main.html'>Play</a></div>
         </div>
 
     </div>
