@@ -12,10 +12,10 @@ function setup()
     playerDead=false;
     bullets = [];
     monsterBullets = [];
-    bulletImage = loadImage("Sketches\\SpaceInvaders\\Images\\bullet.png");
-    monsterBulletImage = loadImage("Sketches\\SpaceInvaders\\Images\\monsterBullet.png");
-    monsterImage = loadImage("Sketches\\SpaceInvaders\\Images\\monster1.png");
-    gameOverImage = loadImage("Sketches\\SpaceInvaders\\Images\\gameOver.jpg");
+    bulletImage = loadImage("Images\\bullet.png");
+    monsterBulletImage = loadImage("Images\\monsterBullet.png");
+    monsterImage = loadImage("Images\\monster1.png");
+    gameOverImage = loadImage("Images\\gameOver.jpg");
     monsters = fill_monsters();
     fill(255);
 }
@@ -58,13 +58,15 @@ function draw()
         image(gameOverImage,0,0,width,height);
         fill(203, 63, 12);//#cb4015
         scoreText = "SCORE: "+score;
-        text(scoreText,width/2-textSize(scoreText),height/1.2);
+        text(scoreText,width/2-textWidth(scoreText)/2,height/1.2);//Centering the text in x axis
+        helpText = "REFRESH TO PLAY AGAIN";
+        text(helpText,(width/2)-textWidth(helpText)/2,height/1.15);
     }
     if(monsters.length==0)
     {        
         noLoop();
         remove();
-        document.body.innerHTML = "<img src='Sketches\\SpaceInvaders\\Images\\win.gif', alt='YOU WON'>";
+        document.body.innerHTML = "<img src='Images\\win.gif', alt='YOU WON'>";
     }
 }
 
@@ -78,7 +80,7 @@ class Player{
         this.rightX = x + this.width;
         this.bottomY = y + 17;
         this.force = 0;
-        this.img = loadImage("Sketches\\SpaceInvaders\\Images\\player.png");
+        this.img = loadImage("Images\\player.png");
     }
     draw(){
         if(this.x>0&&this.rightX<width)//boundary check
