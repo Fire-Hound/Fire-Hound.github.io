@@ -28,7 +28,7 @@ function numberPredict(data)
         output["output"].forEach(number => {
             numbers.push(Math.round(number))
         });
-        if(numbers.indexOf(1)!=-1){
+        if(numbers.indexOf(1)){
         responsiveVoice.speak(numbers.indexOf(1).toString())
         document.getElementsByClassName("result")[0].innerHTML = numbers.indexOf(1).toString()
         }
