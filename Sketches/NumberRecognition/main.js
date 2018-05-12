@@ -11,7 +11,7 @@ function setup(){;
     detect = createButton("PREDICT")
     detect.class("detect-button")
     
-    detect.mousePressed(()=>{
+    detect.mouseReleased(()=>{
         img.loadPixels();
         numberPredict(serialize(img.pixels))
         img.updatePixels();
