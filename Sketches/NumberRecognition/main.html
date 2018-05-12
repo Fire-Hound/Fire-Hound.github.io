@@ -9,18 +9,26 @@
     <script src="AI.js" ></script>
     <script src="main.js" ></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">     
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.10.0"> </script> -->
     <script src="https://unpkg.com/keras-js"></script>
 
     <title>Number Recognition</title>
+    <style>
+    @media (max-width:768px){
+        .instructions{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'; text-align: center; position: relative; top: 10vh
+        }
+    }
+    </style>
 </head>
 <body style="margin:0;padding:0">
-    <div class="instructions" style="font-family: cursive; text-align: center; position: relative; top: 20vh">
+    <div class="instructions" style="font-family:cursive; text-align: center; position: relative; top: 20vh">
         Hey there! Draw on the canvas any number between 0-9 and see if the Neural Network can predict it right
     </div>
     <div id="canvas-holder">
     </div>
-    <div class="result" style="font-family: cursive; text-align: center; position: relative; top: 70vh">
+    <div class="result" style="font-family: cursive; text-align: center; position: absolute; top: 70vh">
     </div>
     <!-- <input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' /> -->
 </body>
