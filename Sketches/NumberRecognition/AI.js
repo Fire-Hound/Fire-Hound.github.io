@@ -38,7 +38,7 @@ function numberPredict(data)
     })
     .catch(err => {
         // handle error
-        console.log(err)
+        responsiveVoice.speak("error")
     })
     }
 
