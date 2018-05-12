@@ -20,7 +20,8 @@ function setup(){;
     (windowHeight+height+20)/2)
 }
 function canvaspixels(){
-    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    // let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
     g.loadPixels()
     img = g.get()
     img.loadPixels()
