@@ -28,13 +28,15 @@ function numberPredict(data)
         output["output"].forEach(number => {
             numbers.push(Math.round(number))
         });
-        if(numbers.indexOf(1)){
-        responsiveVoice.speak(numbers.indexOf(1).toString())
-        document.getElementsByClassName("result")[0].innerHTML = numbers.indexOf(1).toString()
-        }
-        else{
-            responsiveVoice.speak("I can't understand, what that is. I'm sorry")
-        }
+        document.getElementsByClassName("result")[0].innerHTML = numbers
+
+        // if(numbers.indexOf(1)!=-1){
+        // responsiveVoice.speak(numbers.indexOf(1).toString())
+        // document.getElementsByClassName("result")[0].innerHTML = numbers.indexOf(1).toString()
+        // }
+        // else{
+        //     responsiveVoice.speak("I can't understand, what that is. I'm sorry")
+        // }
     })
     .catch(err => {
         // handle error
