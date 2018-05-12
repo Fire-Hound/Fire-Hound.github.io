@@ -9,24 +9,15 @@ function numberPredict(data)
     })
     model.ready()
     .then(() => {
-        // input data object keyed by names of the input layers
-        // or `input` for Sequential models
-        // values are the flattened Float32Array data
-        // (input tensor shapes are specified in the model config)
+
         const input = {
         input: data
         }
-        // make predictions
         return model.predict(input)
     })
     .then(output => {
-        // outputData is an object keyed by names of the output layers
-        // or `output` for Sequential models
-        // e.g.,
-        // outputData['fc1000']
         numbers = []
         output["output"].forEach(number => {
-            // numbers.push(Math.round(number))
             numbers.push(Math.round(number))
         });
 
@@ -39,7 +30,6 @@ function numberPredict(data)
         }
     })
     .catch(err => {
-        // handle error
         responsiveVoice.speak("error")
     })
     }
