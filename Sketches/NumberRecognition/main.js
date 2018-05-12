@@ -10,11 +10,15 @@ function setup(){;
     // grids = createGrids()
     detect = createButton("PREDICT")
     detect.class("detect-button")
-    
     detect.mouseReleased(()=>{
-        img.loadPixels();
+        g.loadPixels();
+        img = g.get();  
+        img.loadPixels()
+        img.resize(28,28)
         numberPredict(serialize(img.pixels))
         img.updatePixels();
+        g.updatePixels();
+        return false;
     })
     detect.position((windowWidth-detect.size().width)/2,
     (windowHeight+height+20)/2)
@@ -43,16 +47,6 @@ function mouseDragged() {
 
 }
 
-function mouseReleased()
-{   
-    // g.resize(28,28)
-    g.loadPixels();
-    img = g.get();  
-    img.loadPixels()
-    img.resize(28,28)
-    img.updatePixels();
-    g.updatePixels();
-}
 // function mousePressed(){
 //     for(grid of grids){
 //         if(grid.inside(mouseX, mouseY)){
