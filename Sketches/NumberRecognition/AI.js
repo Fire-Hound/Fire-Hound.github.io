@@ -27,7 +27,7 @@ function numberPredict(data)
         numbers = []
         output["output"].forEach(number => {
             // numbers.push(Math.round(number))
-            numbers.push(number)
+            numbers.push(Math.round(number))
         });
 
         if(numbers.indexOf(1)!=-1){
