@@ -1,5 +1,6 @@
-let  imageshow = false, img, imgData,g, grids, detect;
-function setup(){;
+let  imageshow = false, img, imgData,g, grids, detect, releasedCount;
+function setup(){
+    releasedCount = 0;
     g = createCanvas(280, 280);
     g.parent("canvas-holder")
     g.position((windowWidth-width)/2,(windowHeight-height)/2)
@@ -11,6 +12,7 @@ function setup(){;
     detect = createButton("PREDICT")
     detect.class("detect-button")
     detect.mouseReleased(()=>{
+        if(releasedCount!=0) return;
         g.loadPixels();
         img = g.get();  
         img.loadPixels()
@@ -18,6 +20,7 @@ function setup(){;
         numberPredict(serialize(img.pixels))
         img.updatePixels();
         g.updatePixels();
+        releasedCount++;
         return false;
     })
     detect.position((windowWidth-detect.size().width)/2,
