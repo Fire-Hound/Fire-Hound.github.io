@@ -26,7 +26,8 @@ function numberPredict(data)
         // outputData['fc1000']
         numbers = []
         output["output"].forEach(number => {
-            numbers.push(Math.round(number))
+            // numbers.push(Math.round(number))
+            numbers.push(number)
         });
         document.getElementsByClassName("result")[0].innerHTML = numbers
 
