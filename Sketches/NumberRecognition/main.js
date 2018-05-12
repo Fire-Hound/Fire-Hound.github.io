@@ -17,9 +17,10 @@ function setup(){;
         img.updatePixels();
     })
     detect.position((windowWidth-detect.size().width)/2,
-    (windowHeight+height)/2)
+    (windowHeight+height+20)/2)
 }
 function canvaspixels(){
+    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     g.loadPixels()
     img = g.get()
     img.loadPixels()
