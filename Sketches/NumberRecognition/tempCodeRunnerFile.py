@@ -1,0 +1,7 @@
+plt.subplot(221)
+# plt.imshow(X_train[0], cmap=plt.get_cmap('gray'))
+# plt.subplot(222)
+# plt.imshow(X_train[1], cmap='gray')
+# plt.subplot(223)
+# plt.imshow(X_train[2], cmap=plt.get_cmap('gray'))
+# plt.subplot(224)
