@@ -75,6 +75,22 @@
             font-size: 3.5vh;
             color:crimson;
         }
+        .blogtext > a{
+            font-family: 'Titan One', cursive;
+            position: absolute;
+            bottom:30vh;
+            left:50vw;
+            font-size: 3vh;
+            transform: translate(-50%, -50%);
+            color: azure;
+            animation-name: play_change;
+            animation-duration: 1s;
+            animation-delay:0.2s; 
+        }
+        .blogtext:hover > a{
+            font-size: 3.5vh;
+            color:crimson;
+        }
         @keyframes text_change{
             0% {color: crimson;bottom:49.5vh;}
             99% {color: azure;}
@@ -109,6 +125,7 @@
                 <polygon class="triangle" points="70, 55 70, 145 145, 100" fill="#f0ffff"/>
                 </svg>
                 <div class="playtext"><a href='Sketches/NumberRecognition/main.html' style="-webkit-text-stroke: 1px black;">Draw</a></div>
+                <div class="blogtext"><a href='https://www.vikramcothur.com/2018/05/making-ai-learn-to-recognise-numbers.html' style="-webkit-text-stroke: 1px black;">Blog</a></div>
             </div>
 
 
