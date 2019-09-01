@@ -4,7 +4,7 @@ function setup(){
     createCanvas(windowWidth, windowHeight);
     background(255)
     qt = new Quadtree(0,0,windowHeight, windowWidth)
-    // qt.subdivide()
+    qt.insert(100,100)
 
 }
 function draw(){

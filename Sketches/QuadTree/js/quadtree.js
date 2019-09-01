@@ -18,6 +18,7 @@ class Quadtree{
         this.TOPRIGHT = new Quadtree(this.x+(this.width/2), this.y, this.height/2, this.width/2)
         this.BOTTOMLEFT = new Quadtree(this.x, this.y+(this.height/2), this.height/2, this.width/2)
         this.BOTTOMRIGHT = new Quadtree(this.x+(this.width/2), this.y+(this.height/2), this.height/2, this.width/2)
+        this.draw()
     }
     draw(){
         noFill()
@@ -37,16 +38,16 @@ class Quadtree{
             console.log("hmm")
             return
         }
-
-        if(this.numOfPoints>=1){
+        this.numOfPoints++
+        if(this.numOfPoints>=2){
             this.subdivide()
             this.TOPLEFT.insert(x,y)
             this.TOPRIGHT.insert(x,y)
             this.BOTTOMLEFT.insert(x,y)
             this.BOTTOMRIGHT.insert(x,y)
         }
-        this.numOfPoints++
-        this.draw()
+
+
         
     }
 }
